@@ -1,3 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: green;
+}
+#container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+#game-board {
+  margin: 0 auto;
+  max-width: 350px;
+}
+.square {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  border: 1px solid black;
+  background-color: #ccc;
+  box-sizing: border-box;
+  padding: 5px;
+  overflow: hidden;
+}
+
+
+img {
+  width: 90px;
+  height: 90px;
 }
