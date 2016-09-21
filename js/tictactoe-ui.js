@@ -21,7 +21,7 @@ $(document).ready(function () {
         $div.append(img);
       }
     };
-    
+
     //This function is used to clear the board
     var clearBoard = function() {
       gridReset();
