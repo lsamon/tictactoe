@@ -3,21 +3,37 @@
 }
 
 body {
-  background-color: green;
+  /*background-color: green;*/
 }
 #container {
   max-width: 960px;
   margin: 0 auto;
+  position: relative;
+}
+#user-info {
+  position: relative;
+  top: 20px;
+  margin-top: 50px;
+  margin: 0 auto;
+  max-width: 450px;
+}
+#user-info .user {
+  padding: 5px;
+  opacity: 0.5;
+  color: #d3d3d3;
 }
 #game-board {
+  position: relative;
+  top: 50px;
   margin: 0 auto;
-  max-width: 350px;
+  max-width: 320px;
 }
 .square {
   width: 100px;
   height: 100px;
   display: inline-block;
   border: 1px solid black;
+  border-radius: 5px;
   background-color: #ccc;
   box-sizing: border-box;
   padding: 5px;
@@ -28,4 +44,38 @@ body {
 img {
   width: 90px;
   height: 90px;
+}
+
+#winner {
+  position: absolute;
+  z-index: 1;
+  top: 50px;
+  left: 20px;
+  max-width: 500px;
+  font-size: 60px;
+  text-align: center;
+  color: yellow;
+  margin-top: 20px;
+}
+
+#buttons {
+  text-align: center;
+  max-width: 300px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+/*.reset-game {
+  margin-top:
+}*/
+#game-stats {
+  width: 250px;
+  height: 200px;
+  position: absolute;
+  right: 400px;
+  bottom: 100px;
+  padding: 10px;
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
+}
+#display-turn {
 }
