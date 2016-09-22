@@ -4,8 +4,8 @@ $(document).ready(function () {
   var totalMoves = 0;
   var xpos = 0;
   var ypos = 0;
-  $('.player-win-count.one').html(game.player1.name + ': ' + game.player1.winCount);
-  $('.player-win-count.two').html(game.player2.name + ': ' + game.player2.winCount);
+  $('.player-win-count.one').html(game.player1.name + ' - ' + game.player1.sign + ' : ' + game.player1.winCount);
+  $('.player-win-count.two').html(game.player2.name + ' - ' + game.player2.sign + ' : ' + game.player2.winCount);
   $('span').html(game.counter);
 
   //This function is used to update the UI eventime a DIV is clicked
@@ -32,9 +32,9 @@ $(document).ready(function () {
       game.player2.moves = 0;
       gameOver = false;
       $('.square > img').remove(); //clear squares
-      $('#winner').html(''); //clear winner div
+      $('#winner h1').text(''); //clear winner div
       $('#display-turn').html(''); //clear turns div
-      $('#game-board').css({"opacity":"1"}); // reset opacity to full
+      $('.square').css({"opacity":"1"}); // reset opacity to full
     };
 
 // This is a function that reacts to when a square gets clicked
@@ -54,9 +54,9 @@ $(document).ready(function () {
     var winnerMessage = function(message) {
       game.counter++;
       $('span').html(game.counter);
-      $('#winner').html(message);
-      $('#winner').hide().fadeIn(2000);
-      $('#game-board').css({"opacity":"0.3"});
+      $('#winner h1').text(message);
+      $('#winner h1').hide().fadeIn(2000);
+      $('.square').css({"opacity":"0.3"});
       $('#display-turn').html('');
       gameOver = true;
     };
@@ -74,16 +74,18 @@ $(document).ready(function () {
     };
 
     //Determine winner by checking the current value of winner from player object
+    console.log(totalMoves);
     var determineWinner = function () {
       if(game.player1.winner) {
         winnerMessage(game.player1.name + ' Wins');
         game.player1.winCount ++;
-        $('.player-win-count.one').html(game.player1.name + ': ' + game.player1.winCount);
+        $('.player-win-count.one').html(game.player1.name + ' - ' + game.player1.sign + ' : ' + game.player1.winCount);
+
       }
       else if(game.player2.winner) {
         winnerMessage(game.player2.name + ' Wins');
         game.player2.winCount ++;
-        $('.player-win-count.two').html(game.player2.name + ': ' + game.player2.winCount);
+        $('.player-win-count.two').html(game.player2.name + ' - ' + game.player2.sign + ' : ' + game.player2.winCount);
       }
       else if(totalMoves === 9) {
         winnerMessage('Draw, Try Again');
@@ -95,24 +97,24 @@ $(document).ready(function () {
     playerTurn();
     game.play(xpos, ypos);
     playerTurn();
+    totalMoves = game.player1.moves + game.player2.moves;
     game.win();
     determineWinner();
     updateUI(xpos, ypos);
-    totalMoves = game.player1.moves + game.player2.moves;
 
   });
 
   // Start Set Players Names and update screen accordingly
   $('button.one').on('click', function(){
     game.player1.name = $('.user.one').val();
-    $('.player-win-count.one').html(game.player1.name + ': ' + game.player1.winCount);
+    $('.player-win-count.one').html(game.player1.name + ' - ' + game.player1.sign + ' : ' + game.player1.winCount);
     updateUI(xpos, ypos);
     $('.user.one').val('');
   });
 
   $('button.two').on('click', function(){
     game.player2.name = $('.user.two').val();
-    $('.player-win-count.two').html(game.player2.name + ': ' + game.player2.winCount);
+    $('.player-win-count.two').html(game.player2.name + ' - ' + game.player2.sign + ' : ' + game.player2.winCount);
     updateUI(xpos, ypos);
     $('.user.two').val('');
   });
@@ -126,8 +128,10 @@ $(document).ready(function () {
     game.player1.winCount = 0;
     game.player2.winCount = 0;
     game.counter = 0
-    $('.player-win-count.one').html(game.player1.name + ': ' + game.player1.winCount);
-    $('.player-win-count.two').html(game.player2.name + ': ' + game.player2.winCount);
+    game.player1.name = $('input').first().attr('placeholder');
+    game.player2.name = $('input').last().attr('placeholder');
+    $('.player-win-count.one').html(game.player1.name + ' - ' + game.player1.sign + ' : ' + game.player1.winCount);
+    $('.player-win-count.two').html(game.player2.name + ' - ' + game.player2.sign + ' : ' + game.player2.winCount);
     $('span').html(game.counter);
   });
 

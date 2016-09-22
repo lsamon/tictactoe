@@ -55,6 +55,7 @@ var game = {
     for(var i = 0; i < grid.length; i++) {
       var row = grid[i];
       var rowStr = row.join('');
+      console.log(rowStr);
       if(game.player1.win === rowStr) {
         game.player1.winner = true;
       }

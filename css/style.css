@@ -1,6 +1,9 @@
 * {
   box-sizing: border-box;
 }
+body {
+  background-color: #18BC9C;
+}
 #container {
   max-width: 960px;
   margin: 0 auto;
@@ -15,8 +18,6 @@
 }
 #user-info .user {
   padding: 5px;
-  opacity: 0.5;
-  color: #d3d3d3;
 }
 #game-board {
   position: relative;
@@ -46,10 +47,13 @@ img {
   top: 50px;
   left: 20px;
   max-width: 500px;
-  font-size: 60px;
   text-align: center;
   color: yellow;
   margin-top: 20px;
+}
+#winner h1 {
+  font-size: 60px;
+  opacity: 1;
 }
 
 #buttons {
