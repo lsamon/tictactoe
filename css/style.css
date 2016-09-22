@@ -69,7 +69,15 @@ img {
   position: absolute;
   right: 400px;
   bottom: 100px;
-  padding: 10px;
+  padding: 10px 27px;
   border: 1px solid #d3d3d3;
   border-radius: 5px;
+  background-color: #FFEE65;
+  line-height: 1.5em;
+  font-size: 18px;
+  text-align: left;
+  opacity: 0.7;
+}
+#game-stats h1 {
+  text-align: center;
 }
