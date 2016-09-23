@@ -2,7 +2,18 @@
 
 Tic Tac Toe is a two player game that by default uses Knots and Crosses to represent a player's token.
 
-This project is fully built with HTML, CSS and Javascript.
+## Rules of TicTacToe
+The object of Tic Tac Toe is to get **three in a row.**
+
+* You play on a three by three game board. The first player is known as X and the second is O.
+
+* Players alternate placing Xs and Os on the game board until either opponent has three in a row or all nine squares are filled.
+
+* X always goes first, and in the event that no one has three in a row, the stalemate is called a cat game.
+
+
+## This program setup
+This project is fully built with **HTML, CSS and Javascript.**
 
 Player1 in this instance is always knots (and always starts) and Player2 is always Crosses.
 
@@ -11,10 +22,10 @@ The game allows for changing of names for players if they do not prefer to just 
 This game also keeps track of the number of games played and how many games each player has won.
 
 There are two buttons to reset the game.
-* Reset Board - resets just the board tokens but not the scores.
-* Reset Game - resets the scores and the board
+* __Reset Board__ - resets just the board tokens but not the scores.
+* __Reset Game__ - resets the scores and the board
 
-[Play TicTacToe](https://lsamon.github.io/tictactoe)
+[__Play TicTacToe__](https://lsamon.github.io/tictactoe)
 
 
 Out of Scope:
