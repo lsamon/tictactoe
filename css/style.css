@@ -2,13 +2,18 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #18BC9C;
+  background-color: #18BC9C !important;
 }
 #container {
   max-width: 960px;
   margin: 0 auto;
   position: relative;
 }
+div.game-section {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
 #user-info {
   position: relative;
   top: 20px;
@@ -20,10 +25,10 @@ body {
   padding: 5px;
 }
 #game-board {
-  position: relative;
-  top: 50px;
-  margin: 0 auto;
+  display:inline-block;
+  margin: 0 10px;
   max-width: 320px;
+  position: relative;
 }
 .square {
   width: 100px;
@@ -52,8 +57,7 @@ img {
   margin-top: 20px;
 }
 #winner h1 {
-  font-size: 60px;
-  opacity: 1;
+  font-size: 50px;
 }
 
 #buttons {
@@ -62,13 +66,15 @@ img {
   margin: 0 auto;
   margin-top: 20px;
 }
+form {
+  margin-bottom: 50px;
+}
 
 #game-stats {
   width: 250px;
-  height: 200px;
-  position: absolute;
-  right: 400px;
-  bottom: 100px;
+  height: 250px;
+  display: inline-block;
+  vertical-align: top;
   padding: 10px 27px;
   border: 1px solid #d3d3d3;
   border-radius: 5px;
