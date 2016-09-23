@@ -105,14 +105,16 @@ $(document).ready(function () {
   });
 
   // Start Set Players Names and update screen accordingly
-  $('button.one').on('click', function(){
+  $('button.one').on('click', function(e){
+    e.preventDefault();
     game.player1.name = $('.user.one').val();
     $('.player-win-count.one').html(game.player1.name + ' - ' + game.player1.sign + ' : ' + game.player1.winCount);
     updateUI(xpos, ypos);
     $('.user.one').val('');
   });
 
-  $('button.two').on('click', function(){
+  $('button.two').on('click', function(e){
+    e.preventDefault();
     game.player2.name = $('.user.two').val();
     $('.player-win-count.two').html(game.player2.name + ' - ' + game.player2.sign + ' : ' + game.player2.winCount);
     updateUI(xpos, ypos);
@@ -121,9 +123,13 @@ $(document).ready(function () {
   //end Set player names
 
 //This section will clear up the game board and the winner variable
-  $('.reset').on('click', clearBoard);
+  $('.reset').on('click', function(e){
+    e.preventDefault();
+    clearBoard();
+  });
 //This section has the function to reset the whole game with the scores
-  $('.reset-game').on('click', function(){
+  $('.reset-game').on('click', function(e){
+    e.preventDefault();
     clearBoard();
     game.player1.winCount = 0;
     game.player2.winCount = 0;
